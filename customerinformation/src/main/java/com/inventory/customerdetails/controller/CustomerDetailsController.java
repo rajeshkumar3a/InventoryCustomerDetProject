@@ -13,20 +13,23 @@ import com.inventory.customerdetails.reqresp.CustomerDetailRequest;
 import com.inventory.customerdetails.reqresp.CustomerDetailResponse;
 import com.inventory.customerdetails.service.CustomerDetailsService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @RestController
+@EnableSwagger2
+@RequestMapping("/InvCustDetails")
 public class CustomerDetailsController {
 	
 	@Autowired
 	CustomerDetailsService customerDetailsService;
-	
 		
 	
-	@RequestMapping("CustDetails")
+	@RequestMapping("/CustDetails")
 	public java.util.List<CustomerDetailsEntity> getCustomerDetails()
 	{
 		return customerDetailsService.getCustomerDetails();
 	}
-	@RequestMapping("AddCustDetails")
+	@RequestMapping("/AddCustDetails")
 	public ResponseEntity addCustomerDetails(@RequestBody CustomerDetailRequest request)
 	{
 		
@@ -34,7 +37,7 @@ public class CustomerDetailsController {
 		
 	}
 	
-	@RequestMapping("DeleteCustDetails/{customerId}")
+	@RequestMapping("/DeleteCustDetails/{customerId}")
 	public ResponseEntity delCustomerDetails(@PathVariable int customerId )
 	{
 		
@@ -42,7 +45,7 @@ public class CustomerDetailsController {
 		
 	}
 	
-	@RequestMapping("UpdtCustDetails")
+	@RequestMapping("/UpdtCustDetails")
 	public ResponseEntity updateCustomerDetails(@RequestBody CustomerDetailRequest request)
 	{
 		
