@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +26,7 @@ public class InventoryController {
 	
 	@Autowired
 	InventoryService inventoryService;
-	@RequestMapping("/InvCustDetails")
+	@GetMapping("/InvCustDetails")
 	public List<InventoryEntity> getInvCustomerDetails()
 	{
 		return inventoryService.getInvCustomerDetails();
@@ -32,7 +34,7 @@ public class InventoryController {
 	}
 	
 	
-	@RequestMapping("/AddInvCustDetails")
+	@PostMapping("/AddInvCustDetails")
 	public ResponseEntity addInvCustomerDetails(@RequestBody InventoryRequest request)
 	{
 		
@@ -40,7 +42,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping("/DeleteInvCustDetails/{inventoryId}")
+	@PostMapping("/DeleteInvCustDetails/{inventoryId}")
 	public ResponseEntity delInvCustomerDetails(@PathVariable int inventoryId )
 	{
 		
@@ -48,7 +50,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping("/UpdtInvCustDetails")
+	@PostMapping("/UpdtInvCustDetails")
 	public ResponseEntity updateInvCustomerDetails(@RequestBody InventoryRequest request)
 	{
 		
