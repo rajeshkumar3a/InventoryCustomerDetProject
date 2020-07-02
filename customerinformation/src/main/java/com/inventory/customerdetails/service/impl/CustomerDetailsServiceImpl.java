@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.inventory.customerdetails.CustomerdetailsApplication;
 import com.inventory.customerdetails.entity.CustomerDetailsEntity;
 import com.inventory.customerdetails.repo.CustomerDetailsRepo;
 import com.inventory.customerdetails.reqresp.CustomerDetailRequest;
